@@ -3,14 +3,17 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "index.html": "07146692d3111a27679193917a6eabe1",
-"/": "07146692d3111a27679193917a6eabe1",
-"main.dart.js": "4c8ff81d80a0cb2e71f48d2b8226032c",
+  "index.html": "bb365951c8a59554a6000e4b81d46168",
+"/": "bb365951c8a59554a6000e4b81d46168",
+"main.dart.js": "8a64e9072364054eb2e53ee2ae88870f",
 "manifest.json": "f4a110e5da01b442b30e66bda5c1ee02",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/AssetManifest.json": "2efbb41d7877d10aac9d091f58ccd7b9",
+"assets/assets/images/gentoo_logo.png": "9a7653ce12338c310e9019a9d3bdf051",
+"assets/assets/images/if_it_moves_compile_it.png": "3d5f21e156ec4d0d6595aa6aa452ccc0",
+"assets/assets/images/tux.png": "374b2f27b082119af90327ba8750251a",
+"assets/AssetManifest.json": "be30c6841c4d2a187455a8456e6f50e3",
 "assets/NOTICES": "b48bd9be818bbadf257dada15252c7d8",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "version.json": "f2104ceabc2e4d7900dc35dfb332a9a2",

@@ -50330,12 +50330,12 @@ X.CE.prototype={
 P(a,b){return new X.m4(this.c,20,0,null)}}
 F.wA.prototype={
 P(a,b){var s=null,r=X.a7a(C.a9),q=t.p
-q=T.a1i(H.a([C.yv,C.EC,new Y.CF(H.a([C.Cx,new T.hx(C.ya,new T.h2(C.aQ,s,s,T.a6U(C.zI,C.np,C.fb),s),s)],q),s)],q),C.d0)
+q=T.a1i(H.a([C.yv,C.EC,new Y.CF(H.a([C.Cx,new T.hx(C.ya,new T.h2(C.aQ,s,s,T.a6U(C.zH,C.np,C.fb),s),s)],q),s)],q),C.d0)
 return new S.qr(new M.rz(new T.h2(C.h5,s,s,new E.Bz(!0,q,s),s),s),"Tylefnx's blog",r,s)}}
 Y.CF.prototype={
 P(a,b){return T.a1i(this.c,C.d1)}}
 Y.zL.prototype={
-P(a,b){return new Y.nG(700,"Son kullan\u0131c\u0131 i\xe7in Linux Nedir, Ne De\u011fildir ?","images/tux.png",null)}}
+P(a,b){return new Y.nG(700,"Son kullan\u0131c\u0131 i\xe7in Linux Nedir, Ne De\u011fildir ?","assets/images/tux.png",null)}}
 Y.nG.prototype={
 P(a,b){var s=null,r=this.c,q=r==null,p=q?340:r
 p=M.KU(s,new U.pW(M.agB(s,s,new L.oT(this.e,s,s)),s),C.m,s,300,s,s,p)
@@ -52843,10 +52843,10 @@ C.tB=new P.hQ(3,"TextAlign.justify")
 C.a0=new P.hQ(4,"TextAlign.start")
 C.cL=new P.hQ(5,"TextAlign.end")
 C.zF=H.a(s([C.fB,C.cK,C.bW,C.tB,C.a0,C.cL]),H.S("o<hQ>"))
-C.Ju=new Y.nG(null,"Gentoo neden vazge\xe7ilmez distrom ?","images/if_it_moves_compile_it.png",null)
+C.Ju=new Y.nG(null,"Gentoo neden vazge\xe7ilmez distrom ?","assets/images/if_it_moves_compile_it.png",null)
 C.Ep=new T.mZ(20,null,null,null)
-C.Jt=new Y.nG(null,"Linux ser\xfcvenim","images/gentoo_logo.png",null)
-C.zI=H.a(s([C.Ju,C.Ep,C.Jt]),t.p)
+C.Jt=new Y.nG(null,"Linux ser\xfcvenim","assets/images/gentoo_logo.png",null)
+C.zH=H.a(s([C.Ju,C.Ep,C.Jt]),t.p)
 C.e2=new K.v3(0,"_RouteRestorationType.named")
 C.u6=new K.v3(1,"_RouteRestorationType.anonymous")
 C.zJ=H.a(s([C.e2,C.u6]),H.S("o<v3>"))
@@ -53993,8 +53993,8 @@ C.C0=new H.aS(6,{click:null,touchstart:null,touchend:null,pointerdown:null,point
 C.Dx=new P.eh(C.C0,t.kI)
 C.C2=new H.c1([C.a5,null,C.ay,null,C.aN,null],H.S("c1<fB,ak>"))
 C.tq=new P.eh(C.C2,H.S("eh<fB>"))
-C.zH=H.a(s(["click","keyup","keydown","mouseup","mousedown","pointerdown","pointerup"]),t.s)
-C.C5=new H.aS(7,{click:null,keyup:null,keydown:null,mouseup:null,mousedown:null,pointerdown:null,pointerup:null},C.zH,t.CA)
+C.zI=H.a(s(["click","keyup","keydown","mouseup","mousedown","pointerdown","pointerup"]),t.s)
+C.C5=new H.aS(7,{click:null,keyup:null,keydown:null,mouseup:null,mousedown:null,pointerdown:null,pointerup:null},C.zI,t.CA)
 C.Dy=new P.eh(C.C5,t.kI)
 C.Ce=new H.c1([C.b1,null,C.nI,null,C.nJ,null],H.S("c1<fw,ak>"))
 C.fz=new P.eh(C.Ce,H.S("eh<fw>"))
