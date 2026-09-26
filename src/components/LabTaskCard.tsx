@@ -9,7 +9,6 @@ import {
   Sparkles, 
   ExternalLink,
   Flame,
-  ArrowRight
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { LabTask } from '../types';
