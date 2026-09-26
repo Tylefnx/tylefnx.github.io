@@ -1,5 +1,5 @@
 import { CourseTrack, SearchTopic } from '../types';
-import { Language } from '../i18n/LanguageContext';
+import { Language } from '../i18n/translations';
 
 export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot', CourseTrack> => {
   const isTr = lang === 'tr';
