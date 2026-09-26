@@ -1,5 +1,5 @@
 import { CourseTrack, SearchTopic } from '../types';
-import { Language } from '../i18n/translations';
+import { Language } from '../i18n/LanguageContext';
 
 export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot', CourseTrack> => {
   const isTr = lang === 'tr';
@@ -8,14 +8,14 @@ export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot',
     reactjs: {
       id: 'reactjs',
       title: 'React JS & Next.js',
-      subtitle: isTr ? 'Ek Dokümantasyon & Mimari Laboratuvarı' : 'Supplementary Docs & Architecture Labs',
-      badge: 'FRONTEND ARCHITECTURE',
+      subtitle: isTr ? 'Çalışma Notları & Mimari Laboratuvarı' : 'Study Notes & Architecture Labs',
+      badge: 'FRONTEND NOTES',
       tagline: isTr
         ? 'React 19, Fiber Reconciler, Custom Hooks, App Router & State Labs'
         : 'React 19, Fiber Reconciler, Custom Hooks, App Router & State Labs',
       description: isTr
-        ? 'Resmi dokümantasyonun ötesine geçen kapsamlı referans. Virtual DOM ve Fiber mimarisi görselleştiricisi, interaktif hook laboratuvarları, Next.js App Router ve performans optimizasyonu reçeteleri.'
-        : 'An in-depth supplementary developer reference beyond standard docs. Features Virtual DOM and Fiber reconciler visualizers, interactive hook sandboxes, Next.js App Router and performance recipes.',
+        ? 'React ve Next.js geliştirirken çıkardığım derinlemesine çalışma notları ve referanslar. Virtual DOM ve Fiber mimarisi görselleştiricisi, interaktif hook laboratuvarları, Next.js App Router ve performans reçeteleri.'
+        : 'In-depth personal engineering notes and reference cheat-sheets for React & Next.js. Includes Virtual DOM and Fiber reconciler visualizers, interactive hook sandboxes, and performance tuning recipes.',
       icon: 'react',
       accentColor: 'cyan',
       primaryUrl: 'https://reactjs.tayfunucuncu.dev/',
@@ -24,15 +24,15 @@ export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot',
         modules: 14,
         lessons: 48,
         interactiveSandboxes: 12,
-        durationEstimate: isTr ? '45+ Konu & Reçete' : '45+ Topics & Recipes',
-        level: isTr ? 'Sıfırdan İleri Seviyeye' : 'Zero to Advanced',
+        durationEstimate: isTr ? '45+ Konu Notu & Reçete' : '45+ Topic Notes & Recipes',
+        level: isTr ? 'Temelden İleri Seviyeye' : 'Core to Advanced',
       },
       highlights: isTr
         ? [
             'React 19 & Fiber Mimarisi Canlı Ağaç Görselleştirici',
-            'useState, useEffect, useMemo, useCallback & Custom Hooks Labs',
+            'useState, useEffect, useMemo, useCallback & Custom Hooks Notları',
             'Next.js 15+ App Router, Server Components & Streaming SSR',
-            'Zustand, Context API & Modern State Yönetimi',
+            'Zustand, Context API & Modern State Yönetim Notları',
             'Performans Optimizasyonu, Memory Leak Önleme & Memoization',
             'İnteraktif Kod Simülatörü ve Anlık Test Ortamı'
           ]
@@ -40,29 +40,29 @@ export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot',
             'React 19 & Fiber Architecture Live Tree Visualizer',
             'useState, useEffect, useMemo, useCallback & Custom Hooks Labs',
             'Next.js 15+ App Router, Server Components & Streaming SSR',
-            'Zustand, Context API & Modern State Management',
+            'Zustand, Context API & Modern State Management Notes',
             'Performance Optimization, Memory Leak Prevention & Memoization',
-            'Interactive Code Sandbox and Runtime Testing Suite'
+            'Interactive Code Sandbox and Runtime Diagnostics Suite'
           ],
       techStack: ['React 19', 'Next.js 15', 'TypeScript', 'Tailwind CSS', 'Fiber Reconciler', 'Zustand', 'Vite'],
       curriculum: isTr
         ? [
             {
-              category: 'Temel ve İleri React Konseptleri',
+              category: 'Temel ve İleri React Notları',
               items: [
-                'React Felsefesi ve Declarative UI Mantığı',
+                'React Felsefesi ve Declarative UI Mantığı Notları',
                 'JSX, Render Aşamaları ve Virtual DOM Mekaniği',
                 'Component Lifecycle, Props ve State Yönetimi',
-                'Tüm Temel ve İleri Seviye React Hookları'
+                'Tüm Temel ve İleri Seviye React Hook Notları'
               ]
             },
             {
               category: 'Mimari ve Derinlemesine Kavramlar',
               items: [
-                'React Fiber Reconciler & Concurrent Mode',
+                'React Fiber Reconciler & Concurrent Mode Notları',
                 'Diffing Algoritması ve Reconciliation Ağacı',
                 'Server Components (RSC) vs Client Components',
-                'Custom Hooks Tasarım Desenleri'
+                'Custom Hooks Tasarım Desenleri Notları'
               ]
             },
             {
@@ -71,15 +71,15 @@ export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot',
                 'Context API vs Zustand vs Redux Toolkit Karşılaştırması',
                 'Next.js App Router, Nested Layouts & Server Actions',
                 'Streaming, Suspense & Progressive Hydration',
-                'Production-Grade Proje Mimarisi ve Kodlama Pratikleri'
+                'Production-Grade Proje Mimarisi ve Kodlama Reçeteleri'
               ]
             }
           ]
         : [
             {
-              category: 'Core & Advanced React Concepts',
+              category: 'Core & Advanced React Notes',
               items: [
-                'React Philosophy and Declarative UI Principles',
+                'React Philosophy & Declarative UI Principles',
                 'JSX, Render Phases & Virtual DOM Mechanics',
                 'Component Lifecycle, Props and State Management',
                 'Complete Core and Advanced React Hooks Reference'
@@ -88,10 +88,10 @@ export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot',
             {
               category: 'Architecture & Deep Mechanics',
               items: [
-                'React Fiber Reconciler & Concurrent Mode',
+                'React Fiber Reconciler & Concurrent Mode Notes',
                 'Diffing Algorithm & Reconciliation Tree',
                 'Server Components (RSC) vs Client Components',
-                'Custom Hook Design Patterns'
+                'Custom Hook Design Patterns & Recipes'
               ]
             },
             {
@@ -100,7 +100,7 @@ export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot',
                 'Context API vs Zustand vs Redux Toolkit Matrix',
                 'Next.js App Router, Nested Layouts & Server Actions',
                 'Streaming, Suspense & Progressive Hydration',
-                'Production-Grade Architectural Recipes'
+                'Production-Grade Architecture Recipes'
               ]
             }
           ],
@@ -146,14 +146,14 @@ export function ModernSearchComponent() {
     springboot: {
       id: 'springboot',
       title: 'Java & Spring Boot 3.x',
-      subtitle: isTr ? 'Ek Dokümantasyon & Kurumsal Mimari' : 'Supplementary Docs & Enterprise Architecture',
-      badge: 'BACKEND ENTERPRISE',
+      subtitle: isTr ? 'Çalışma Notları & Kurumsal Mimari' : 'Study Notes & Enterprise Architecture',
+      badge: 'BACKEND NOTES',
       tagline: isTr
         ? 'Spring Boot 3.x, Java 21, Spring Security 6, JPA, Microservices & Filter Chains'
         : 'Spring Boot 3.x, Java 21, Spring Security 6, JPA, Microservices & Filter Chains',
       description: isTr
-        ? 'Kurumsal standartlarda modern Java ve Spring Boot ekosistemi. Spring Security 6 filtre zinciri simülatörü, JPA/Hibernate optimizasyonları, RESTful mikroservisler ve interaktif mimari laboratuvarı.'
-        : 'Enterprise-grade reference for modern Java and Spring Boot ecosystem. Interactive Spring Security 6 filter chain simulator, JPA/Hibernate optimizations, RESTful microservices and architecture labs.',
+        ? 'Java ve Spring Boot ile kurumsal backend geliştirme üzerine tuttuğum mimari notlar ve referanslar. Spring Security 6 filtre zinciri simülatörü, JPA/Hibernate optimizasyonları ve mikroservis desenleri.'
+        : 'Personal engineering notes and reference cheat-sheets for Java & Spring Boot. Includes interactive Spring Security 6 filter chain simulator, JPA/Hibernate tuning, and microservice architecture patterns.',
       icon: 'spring',
       accentColor: 'emerald',
       primaryUrl: 'https://spring.tayfunucuncu.dev/',
@@ -162,13 +162,13 @@ export function ModernSearchComponent() {
         modules: 16,
         lessons: 56,
         interactiveSandboxes: 14,
-        durationEstimate: isTr ? '55+ Konu & Reçete' : '55+ Topics & Recipes',
-        level: isTr ? 'Sıfırdan İleri Seviyeye' : 'Zero to Advanced',
+        durationEstimate: isTr ? '55+ Konu Notu & Reçete' : '55+ Topic Notes & Recipes',
+        level: isTr ? 'Temelden İleri Seviyeye' : 'Core to Advanced',
       },
       highlights: isTr
         ? [
             'Spring Security 6.x & JWT Filtre Zinciri Canlı Simülatörü',
-            'Java 21 Virtual Threads, Records & Pattern Matching',
+            'Java 21 Virtual Threads, Records & Pattern Matching Notları',
             'Spring Data JPA, Hibernate N+1 Problem Çözümleri & Indexing',
             'REST API Mimarisi, DTO Pattern & Global Exception Handling',
             'Mikroservisler, API Gateway, Eureka & Event-Driven Kafka',
@@ -176,7 +176,7 @@ export function ModernSearchComponent() {
           ]
         : [
             'Spring Security 6.x & JWT Filter Chain Interactive Simulator',
-            'Java 21 Virtual Threads, Records & Pattern Matching',
+            'Java 21 Virtual Threads, Records & Pattern Matching Notes',
             'Spring Data JPA, Hibernate N+1 Optimization & Indexing',
             'REST API Architecture, DTO Pattern & Global Exception Handling',
             'Microservices, API Gateway, Eureka & Event-Driven Kafka',
@@ -186,10 +186,10 @@ export function ModernSearchComponent() {
       curriculum: isTr
         ? [
             {
-              category: 'Spring Framework & Core Mimarisi',
+              category: 'Spring Framework & Core Mimari Notları',
               items: [
                 'Inversion of Control (IoC) & Dependency Injection (DI)',
-                'Spring Bean Yaşam Döngüsü ve Scopes',
+                'Spring Bean Yaşam Döngüsü ve Scopes Notları',
                 'Spring Boot Auto-Configuration Mekanizması',
                 'Java 21 Modern Özellikleri (Virtual Threads, Records)'
               ]
@@ -215,7 +215,7 @@ export function ModernSearchComponent() {
           ]
         : [
             {
-              category: 'Spring Framework & Core Architecture',
+              category: 'Spring Framework & Core Architecture Notes',
               items: [
                 'Inversion of Control (IoC) & Dependency Injection (DI)',
                 'Spring Bean Lifecycles and Scopes',
@@ -283,12 +283,12 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
     {
       id: 'react-fiber',
       title: isTr ? 'React Fiber Mimarisi & Reconciliation' : 'React Fiber Architecture & Reconciliation',
-      category: isTr ? 'Mimari' : 'Architecture',
+      category: isTr ? 'Mimari Notlar' : 'Architecture Notes',
       track: 'reactjs',
-      trackTitle: 'React JS Mastery Hub',
+      trackTitle: 'React JS Dev Notes',
       url: 'https://reactjs.tayfunucuncu.dev/#architecture',
       description: isTr
-        ? 'Fiber düğümleri, render ve commit aşamaları, concurrent mod mantığı.'
+        ? 'Fiber düğümleri, render ve commit aşamaları, concurrent mod mantığı notları.'
         : 'Fiber nodes, render/commit phases, and concurrent mode mechanics.'
     },
     {
@@ -296,10 +296,10 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
       title: isTr ? 'useState, useEffect ve Custom Hooks' : 'useState, useEffect and Custom Hooks',
       category: isTr ? 'Hooks & State' : 'Hooks & State',
       track: 'reactjs',
-      trackTitle: 'React JS Mastery Hub',
+      trackTitle: 'React JS Dev Notes',
       url: 'https://reactjs.tayfunucuncu.dev/#lessons',
       description: isTr
-        ? 'Tüm standart hookların derinlemesine incelenmesi ve kendi custom hookunuzu yazma.'
+        ? 'Tüm standart hookların derinlemesine mekanikleri ve custom hook notları.'
         : 'In-depth breakdown of standard hooks and custom hook architectures.'
     },
     {
@@ -307,51 +307,51 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
       title: isTr ? 'Next.js App Router & Server Components' : 'Next.js App Router & Server Components',
       category: 'Next.js',
       track: 'reactjs',
-      trackTitle: 'React JS Mastery Hub',
+      trackTitle: 'React JS Dev Notes',
       url: 'https://reactjs.tayfunucuncu.dev/#lessons',
       description: isTr
-        ? 'RSC, Server Actions, Dynamic Routes ve Streaming SSR.'
-        : 'RSC, Server Actions, Dynamic Routes and Streaming SSR.'
+        ? 'RSC, Server Actions, Dynamic Routes ve Streaming SSR notları.'
+        : 'RSC, Server Actions, Dynamic Routes and Streaming SSR notes.'
     },
     {
       id: 'react-performance',
       title: isTr ? 'React Performans & Memory Optimizasyonu' : 'React Performance & Memory Optimization',
       category: isTr ? 'Optimizasyon' : 'Optimization',
       track: 'reactjs',
-      trackTitle: 'React JS Mastery Hub',
+      trackTitle: 'React JS Dev Notes',
       url: 'https://reactjs.tayfunucuncu.dev/#recipes',
       description: isTr
-        ? 'useMemo, useCallback, memoization ve gereksiz re-renderları önleme.'
+        ? 'useMemo, useCallback, memoization ve gereksiz re-render önleme reçeteleri.'
         : 'useMemo, useCallback, memoization and preventing redundant re-renders.'
     },
     {
       id: 'spring-security',
       title: isTr ? 'Spring Security 6 & JWT Auth Filter Chain' : 'Spring Security 6 & JWT Auth Filter Chain',
-      category: isTr ? 'Güvenlik' : 'Security',
+      category: isTr ? 'Güvenlik Notları' : 'Security Notes',
       track: 'springboot',
-      trackTitle: 'Spring Boot Mastery Hub',
+      trackTitle: 'Spring Boot Dev Notes',
       url: 'https://spring.tayfunucuncu.dev/#architecture',
       description: isTr
-        ? 'SecurityFilterChain mimarisi, OncePerRequestFilter, JWT token doğrulama.'
-        : 'SecurityFilterChain architecture, OncePerRequestFilter, JWT validation.'
+        ? 'SecurityFilterChain mimarisi, OncePerRequestFilter, JWT token doğrulama notları.'
+        : 'SecurityFilterChain architecture, OncePerRequestFilter, JWT validation notes.'
     },
     {
       id: 'spring-jpa',
       title: isTr ? 'Spring Data JPA & Hibernate Optimizasyonu' : 'Spring Data JPA & Hibernate Optimization',
-      category: isTr ? 'Veritabanı' : 'Database',
+      category: isTr ? 'Veritabanı Notları' : 'Database Notes',
       track: 'springboot',
-      trackTitle: 'Spring Boot Mastery Hub',
+      trackTitle: 'Spring Boot Dev Notes',
       url: 'https://spring.tayfunucuncu.dev/#lessons',
       description: isTr
-        ? 'N+1 problemi, Entity yaşam döngüsü, Lazy/Eager fetching ve Criteria API.'
-        : 'N+1 problem, Entity lifecycle, Lazy/Eager fetching and Criteria API.'
+        ? 'N+1 problemi, Entity yaşam döngüsü, Lazy/Eager fetching ve Criteria API notları.'
+        : 'N+1 problem, Entity lifecycle, Lazy/Eager fetching and Criteria API notes.'
     },
     {
       id: 'spring-ioc',
       title: isTr ? 'IoC, Dependency Injection & Bean Lifecycle' : 'IoC, Dependency Injection & Bean Lifecycle',
       category: isTr ? 'Core Mimari' : 'Core Architecture',
       track: 'springboot',
-      trackTitle: 'Spring Boot Mastery Hub',
+      trackTitle: 'Spring Boot Dev Notes',
       url: 'https://spring.tayfunucuncu.dev/#lessons',
       description: isTr
         ? 'Spring Container, BeanScopes, @Configuration, @Component ve Lifecycle callbackleri.'
@@ -362,10 +362,10 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
       title: isTr ? 'Mikroservisler, REST API & Exception Handling' : 'Microservices, REST API & Exception Handling',
       category: 'Enterprise',
       track: 'springboot',
-      trackTitle: 'Spring Boot Mastery Hub',
+      trackTitle: 'Spring Boot Dev Notes',
       url: 'https://spring.tayfunucuncu.dev/#recipes',
       description: isTr
-        ? 'Production-ready REST API yapısı, ControllerAdvice ve mikroservis iletişimleri.'
+        ? 'Production-ready REST API yapısı, ControllerAdvice ve mikroservis iletişim desenleri.'
         : 'Production-ready REST API structure, ControllerAdvice and microservice patterns.'
     }
   ];
@@ -398,8 +398,8 @@ export const getComparisonFeatures = (lang: Language) => {
         },
         {
           feature: 'Dokümantasyon Türü',
-          react: 'Ek Dokümantasyon & İnteraktif Reçeteler',
-          spring: 'Ek Dokümantasyon & Kurumsal Mimari Şemalar'
+          react: 'Geliştirici Çalışma Notları & Pratik Reçeteler',
+          spring: 'Geliştirici Çalışma Notları & Mimari Akışlar'
         },
         {
           feature: 'Canlı Yayın Adresi',
@@ -430,8 +430,8 @@ export const getComparisonFeatures = (lang: Language) => {
         },
         {
           feature: 'Documentation Type',
-          react: 'Supplementary Reference & Interactive Recipes',
-          spring: 'Supplementary Reference & Architecture Flowcharts'
+          react: 'Developer Study Notes & Practical Recipes',
+          spring: 'Developer Study Notes & Architecture Flowcharts'
         },
         {
           feature: 'Live Deployment URL',
