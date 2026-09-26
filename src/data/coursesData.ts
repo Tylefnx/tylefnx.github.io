@@ -11,7 +11,7 @@ export const COURSES: Record<'reactjs' | 'springboot', CourseTrack> = {
       'Sıfırdan ileri seviyeye modern React ekosistemi. Virtual DOM ve Fiber mimarisi görselleştiricisi, interaktif hook laboratuvarları, Next.js App Router ve performans optimizasyonu teknikleri.',
     icon: 'react',
     accentColor: 'cyan',
-    primaryUrl: 'https://tylefnx.github.io/learnreactjs/',
+    primaryUrl: 'https://react.tayfunucuncu.dev/',
     githubUrl: 'https://github.com/Tylefnx/learnreactjs',
     stats: {
       modules: 14,
@@ -106,7 +106,7 @@ export function ModernSearchComponent() {
       'Kurumsal standartlarda modern Java ve Spring Boot ekosistemi. Spring Security 6 filtre zinciri simülatörü, JPA/Hibernate optimizasyonları, RESTful mikroservisler ve interaktif mimari laboratuvarı.',
     icon: 'spring',
     accentColor: 'emerald',
-    primaryUrl: 'https://tylefnx.github.io/learnspringboot/',
+    primaryUrl: 'https://spring.tayfunucuncu.dev/',
     githubUrl: 'https://github.com/Tylefnx/learnspringboot',
     stats: {
       modules: 16,
@@ -193,7 +193,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Mimari',
     track: 'reactjs',
     trackTitle: 'React JS Mastery Hub',
-    url: 'https://tylefnx.github.io/learnreactjs/#architecture',
+    url: 'https://react.tayfunucuncu.dev/#architecture',
     description: 'Fiber düğümleri, render ve commit aşamaları, concurrent mod mantığı.'
   },
   {
@@ -202,7 +202,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Hooks & State',
     track: 'reactjs',
     trackTitle: 'React JS Mastery Hub',
-    url: 'https://tylefnx.github.io/learnreactjs/#lessons',
+    url: 'https://react.tayfunucuncu.dev/#lessons',
     description: 'Tüm standart hookların derinlemesine incelenmesi ve kendi custom hookunuzu yazma.'
   },
   {
@@ -211,7 +211,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Next.js',
     track: 'reactjs',
     trackTitle: 'React JS Mastery Hub',
-    url: 'https://tylefnx.github.io/learnreactjs/#lessons',
+    url: 'https://react.tayfunucuncu.dev/#lessons',
     description: 'RSC, Server Actions, Dynamic Routes ve Streaming SSR.'
   },
   {
@@ -220,7 +220,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Optimizasyon',
     track: 'reactjs',
     trackTitle: 'React JS Mastery Hub',
-    url: 'https://tylefnx.github.io/learnreactjs/#recipes',
+    url: 'https://react.tayfunucuncu.dev/#recipes',
     description: 'useMemo, useCallback, memoization ve gereksiz re-renderları önleme.'
   },
   // Spring Boot topics
@@ -230,7 +230,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Güvenlik',
     track: 'springboot',
     trackTitle: 'Spring Boot Mastery Hub',
-    url: 'https://tylefnx.github.io/learnspringboot/#architecture',
+    url: 'https://spring.tayfunucuncu.dev/#architecture',
     description: 'SecurityFilterChain mimarisi, OncePerRequestFilter, JWT token doğrulama.'
   },
   {
@@ -239,7 +239,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Veritabanı',
     track: 'springboot',
     trackTitle: 'Spring Boot Mastery Hub',
-    url: 'https://tylefnx.github.io/learnspringboot/#lessons',
+    url: 'https://spring.tayfunucuncu.dev/#lessons',
     description: 'N+1 problemi, Entity yaşam döngüsü, Lazy/Eager fetching ve Criteria/Specification.'
   },
   {
@@ -248,7 +248,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Core Mimari',
     track: 'springboot',
     trackTitle: 'Spring Boot Mastery Hub',
-    url: 'https://tylefnx.github.io/learnspringboot/#lessons',
+    url: 'https://spring.tayfunucuncu.dev/#lessons',
     description: 'Spring Container, BeanScopes, @Configuration, @Component ve Lifecycle callbackleri.'
   },
   {
@@ -257,7 +257,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     category: 'Enterprise',
     track: 'springboot',
     trackTitle: 'Spring Boot Mastery Hub',
-    url: 'https://tylefnx.github.io/learnspringboot/#recipes',
+    url: 'https://spring.tayfunucuncu.dev/#recipes',
     description: 'Production-ready REST API yapısı, ControllerAdvice ve mikroservis iletişimleri.'
   }
 ];
@@ -289,8 +289,8 @@ export const COMPARISON_FEATURES = [
     spring: '%100 Türkçe & Kurumsal Senaryolarla Desteklenmiş'
   },
   {
-    feature: 'GitHub Pages Entegrasyonu',
-    react: 'Anında Açılır, Sunucusuz Canlı Çalışır',
-    spring: 'Anında Açılır, Sunucusuz Canlı Çalışır'
+    feature: 'Canlı Yayın Adresi',
+    react: 'react.tayfunucuncu.dev',
+    spring: 'spring.tayfunucuncu.dev'
   }
 ];
