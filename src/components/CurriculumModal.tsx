@@ -2,6 +2,7 @@ import React from 'react';
 import { X, CheckCircle2, ArrowRight, BookOpen, Clock, Boxes, Cpu, Sparkles, ExternalLink } from 'lucide-react';
 import { CourseTrack } from '../types';
 import { soundFx } from '../utils/audio';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface CurriculumModalProps {
   track: CourseTrack | null;
@@ -9,6 +10,7 @@ interface CurriculumModalProps {
 }
 
 export const CurriculumModal: React.FC<CurriculumModalProps> = ({ track, onClose }) => {
+  const { t } = useLanguage();
   if (!track) return null;
 
   const isReact = track.id === 'reactjs';
@@ -33,7 +35,7 @@ export const CurriculumModal: React.FC<CurriculumModalProps> = ({ track, onClose
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 {track.title}
                 <span className="text-xs px-2 py-0.5 rounded font-mono bg-slate-800 text-slate-300 font-normal">
-                  Müfredat Planı
+                  {t.modal.indexTitle}
                 </span>
               </h3>
               <p className="text-xs text-slate-400">{track.subtitle}</p>
@@ -58,9 +60,9 @@ export const CurriculumModal: React.FC<CurriculumModalProps> = ({ track, onClose
             <div>
               <div className="text-base font-bold text-white flex items-center justify-center gap-1">
                 <Boxes className="w-4 h-4 text-slate-400" />
-                {track.stats.modules} Modül
+                {track.stats.modules} {t.cards.modules}
               </div>
-              <div className="text-[11px] text-slate-400">{track.stats.lessons} Detaylı Ders</div>
+              <div className="text-[11px] text-slate-400">{track.stats.lessons} Detaylı Konu</div>
             </div>
             <div className="border-x border-slate-800">
               <div className="text-base font-bold text-white flex items-center justify-center gap-1">
@@ -81,7 +83,7 @@ export const CurriculumModal: React.FC<CurriculumModalProps> = ({ track, onClose
           {/* Curriculum Sections */}
           <div className="space-y-4">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-              Kapsamlı Konu Başlıkları
+              {t.modal.sectionsTitle}
             </h4>
 
             {track.curriculum.map((section, idx) => (
@@ -113,7 +115,7 @@ export const CurriculumModal: React.FC<CurriculumModalProps> = ({ track, onClose
           <div className="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              Neden Bu Platformda Öğrenmelisiniz?
+              {t.modal.whyTitle}
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
               {track.highlights.map((highlight, idx) => (
@@ -147,7 +149,7 @@ export const CurriculumModal: React.FC<CurriculumModalProps> = ({ track, onClose
                 : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-emerald-500/25'
             }`}
           >
-            <span>Platforma Giriş Yap</span>
+            <span>{t.modal.btnLaunch}</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

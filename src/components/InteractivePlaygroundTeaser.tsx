@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { Play, Copy, Check, Terminal, Sparkles, RefreshCw, Layers, ArrowRight } from 'lucide-react';
-import { COURSES } from '../data/coursesData';
+import { getCoursesData } from '../data/coursesData';
 import { soundFx } from '../utils/audio';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export const InteractivePlaygroundTeaser: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'reactjs' | 'springboot'>('reactjs');
   const [isRunning, setIsRunning] = useState(false);
   const [copied, setCopied] = useState(false);
   const [hasSimulated, setHasSimulated] = useState(false);
+  const { language, t } = useLanguage();
 
-  const activeCourse = COURSES[activeTab];
+  const courses = getCoursesData(language);
+  const activeCourse = courses[activeTab];
   const isReact = activeTab === 'reactjs';
 
   const handleTabChange = (tab: 'reactjs' | 'springboot') => {
@@ -35,23 +38,23 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
   };
 
   return (
-    <section id="playground" className="py-16 md:py-24 relative scroll-mt-20">
+    <section id="playground" className="py-16 md:py-20 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono font-semibold text-slate-400 mb-4">
             <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-            <span>LIVE CODE & ARCHITECTURE SIMULATOR</span>
+            <span>{t.playground.badge}</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            İnteraktif Kod ve Mimari{' '}
+            {t.playground.title}
             <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              Stüdyosu
+              {t.playground.titleHighlight}
             </span>
           </h2>
-          <p className="mt-4 text-slate-300 text-base sm:text-lg">
-            Platformlardaki interaktif sandboxlar sayesinde kodu değiştirebilir, mimari akışları ve arka plandaki çalışma mekanizmasını canlı olarak test edebilirsiniz.
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
+            {t.playground.subtitle}
           </p>
         </div>
 
@@ -78,7 +81,7 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
                   }`}
                 >
                   <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                  React 19 Hook (TSX)
+                  {t.playground.tabReact}
                 </button>
 
                 <button
@@ -90,7 +93,7 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
                   }`}
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  Spring Boot 3.x (Java)
+                  {t.playground.tabSpring}
                 </button>
               </div>
             </div>
@@ -100,10 +103,10 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
               <button
                 onClick={handleCopy}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-medium border border-slate-800 transition-all"
-                title="Kodu Kopyala"
+                title={t.playground.btnCopy}
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copied ? 'Kopyalandı' : 'Kopyala'}</span>
+                <span>{copied ? t.playground.btnCopied : t.playground.btnCopy}</span>
               </button>
 
               <button
@@ -120,7 +123,7 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
                 ) : (
                   <Play className="w-3.5 h-3.5 fill-current" />
                 )}
-                <span>{isRunning ? 'Çalıştırılıyor...' : 'Kodu Simüle Et'}</span>
+                <span>{isRunning ? t.playground.btnRunning : t.playground.btnSimulate}</span>
               </button>
             </div>
           </div>
@@ -140,15 +143,15 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
               </pre>
             </div>
 
-            {/* Output & Architecture Diagnostics Pane (5 cols) */}
+            {/* Output Diagnostics Pane (5 cols) */}
             <div className="lg:col-span-5 p-4 sm:p-6 bg-[#060a14] flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-slate-400 pb-3 mb-3 border-b border-slate-800/60">
                   <div className="flex items-center gap-1.5">
                     <Sparkles className={`w-3.5 h-3.5 ${isReact ? 'text-cyan-400' : 'text-emerald-400'}`} />
-                    <span>Canlı Çıktı & Mimari Analiz</span>
+                    <span>{t.playground.outputHeading}</span>
                   </div>
-                  <span className="text-[10px] text-slate-500">Live Simulator</span>
+                  <span className="text-[10px] text-slate-500">Diagnostics</span>
                 </div>
 
                 <div className="space-y-4">
@@ -160,15 +163,15 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
                     <div className="text-[11px] font-mono text-slate-400 whitespace-pre-wrap leading-relaxed">
                       {hasSimulated
                         ? activeCourse.codePreview.outputContent
-                        : 'Simülatörü çalıştırmak için yukarıdaki "Kodu Simüle Et" butonuna tıklayın.'}
+                        : t.playground.outputPlaceholder}
                     </div>
                   </div>
 
-                  {/* Architecture Diagram Pill */}
+                  {/* Highlights List */}
                   <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800/60">
                     <div className="text-xs font-semibold text-slate-300 mb-2 flex items-center gap-1.5">
                       <Layers className="w-3.5 h-3.5 text-slate-400" />
-                      Platformda Neler Var?
+                      {t.playground.featuresHeading}
                     </div>
                     <ul className="text-xs text-slate-400 space-y-1.5">
                       {activeCourse.highlights.slice(0, 3).map((item, idx) => (
@@ -193,7 +196,7 @@ export const InteractivePlaygroundTeaser: React.FC = () => {
                       : 'bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
                   }`}
                 >
-                  <span>Tüm {activeCourse.title} Derslerini Aç</span>
+                  <span>{t.playground.openFullDocs} ({activeCourse.title})</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

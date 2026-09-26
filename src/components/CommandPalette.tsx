@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, X, ArrowRight, Hash, Sparkles } from 'lucide-react';
-import { SEARCH_TOPICS } from '../data/coursesData';
+import { getSearchTopics } from '../data/coursesData';
 import { soundFx } from '../utils/audio';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -11,6 +12,8 @@ interface CommandPaletteProps {
 export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose }) => {
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const { language, t } = useLanguage();
+  const searchTopics = getSearchTopics(language);
 
   useEffect(() => {
     if (isOpen) {
@@ -35,7 +38,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
 
   if (!isOpen) return null;
 
-  const filtered = SEARCH_TOPICS.filter(
+  const filtered = searchTopics.filter(
     (item) =>
       item.title.toLowerCase().includes(query.toLowerCase()) ||
       item.description.toLowerCase().includes(query.toLowerCase()) ||
@@ -60,7 +63,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Konu, kavram veya mimari ara (örn: Fiber, Security, Hooks, JPA)..."
+            placeholder={t.search.placeholder}
             className="w-full bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none"
           />
           {query && (
@@ -124,15 +127,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
           ) : (
             <div className="p-8 text-center text-slate-500 text-xs">
               <Sparkles className="w-6 h-6 mx-auto mb-2 text-slate-600" />
-              "{query}" için eşleşen konu bulunamadı.
+              "{query}" {t.search.noResult}
             </div>
           )}
         </div>
 
         {/* Quick Nav Footer */}
         <div className="px-4 py-2.5 bg-[#060a14] border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500">
-          <span>Tıklandığında ilgili konunun interaktif dersine doğrudan gider.</span>
-          <span className="font-mono">Tylefnx Academy Search</span>
+          <span>{t.search.footerHint}</span>
+          <span className="font-mono">Tylefnx Docs Search</span>
         </div>
       </div>
     </div>

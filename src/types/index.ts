@@ -13,7 +13,6 @@ export interface CourseTrack {
     modules: number;
     lessons: number;
     interactiveSandboxes: number;
-    quizzes: number;
     durationEstimate: string;
     level: string;
   };

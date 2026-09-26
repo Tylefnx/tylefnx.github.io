@@ -9,11 +9,12 @@ import {
   Boxes, 
   Clock, 
   Award,
-  Flame
+  Layers
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { CourseTrack } from '../types';
 import { soundFx } from '../utils/audio';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface CourseCardProps {
   track: CourseTrack;
@@ -21,11 +22,11 @@ interface CourseCardProps {
 }
 
 export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum }) => {
+  const { t } = useLanguage();
   const isReact = track.id === 'reactjs';
 
   const handleLaunch = () => {
     soundFx.playLaunch();
-    // Trigger celebratory confetti burst
     confetti({
       particleCount: 70,
       spread: 60,
@@ -64,7 +65,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
         />
 
         <div>
-          {/* Top Row: Badge & Level */}
+          {/* Top Row: Badge & Type */}
           <div className="flex items-center justify-between gap-2 mb-6">
             <div
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold font-mono tracking-wider uppercase border ${
@@ -74,12 +75,12 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
-              {track.badge}
+              {isReact ? t.cards.reactBadge : t.cards.springBadge}
             </div>
 
             <div className="flex items-center gap-1 text-xs font-semibold text-slate-400 bg-slate-900/80 px-2.5 py-1 rounded-full border border-slate-800">
-              <Flame className="w-3.5 h-3.5 text-amber-400" />
-              {track.stats.level}
+              <Layers className="w-3.5 h-3.5 text-cyan-400" />
+              {t.cards.levelDoc}
             </div>
           </div>
 
@@ -94,7 +95,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
             >
               <div className="w-full h-full bg-[#070b15] rounded-[14px] flex items-center justify-center p-3">
                 {isReact ? (
-                  <svg className="w-10 h-10 text-cyan-400" viewBox="-11.5 -10.23174 23 20.46348">
+                  <svg className="w-10 h-10 text-cyan-400 animate-spin-slow" viewBox="-11.5 -10.23174 23 20.46348">
                     <circle cx="0" cy="0" r="2.05" fill="currentColor" />
                     <g stroke="currentColor" strokeWidth="1" fill="none">
                       <ellipse rx="11" ry="4.2" />
@@ -141,14 +142,14 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
             ))}
           </div>
 
-          {/* Quick Platform Stats Grid */}
+          {/* Quick Stats Grid */}
           <div className="grid grid-cols-3 gap-2.5 py-3 px-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 mb-6">
             <div className="text-center">
               <div className="text-lg sm:text-xl font-bold font-mono text-white flex items-center justify-center gap-1">
                 <Boxes className="w-4 h-4 text-slate-400" />
                 {track.stats.modules}
               </div>
-              <div className="text-[11px] text-slate-400">Modül</div>
+              <div className="text-[11px] text-slate-400">{t.cards.modules}</div>
             </div>
 
             <div className="text-center border-x border-slate-800">
@@ -156,7 +157,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
                 <Cpu className="w-4 h-4 text-slate-400" />
                 {track.stats.interactiveSandboxes}
               </div>
-              <div className="text-[11px] text-slate-400">Sandbox</div>
+              <div className="text-[11px] text-slate-400">{t.cards.sandboxes}</div>
             </div>
 
             <div className="text-center">
@@ -164,15 +165,15 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
                 <Clock className="w-4 h-4 text-slate-400" />
                 {track.stats.durationEstimate}
               </div>
-              <div className="text-[11px] text-slate-400">Müfredat</div>
+              <div className="text-[11px] text-slate-400">{t.cards.duration}</div>
             </div>
           </div>
 
-          {/* Key Feature Highlights */}
+          {/* Highlights */}
           <div className="space-y-2.5 mb-8">
             <div className="text-xs font-bold text-slate-400 tracking-wider uppercase flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5 text-slate-300" />
-              Öne Çıkan Özellikler & Laboratuvarlar
+              {t.cards.highlightsTitle}
             </div>
             {track.highlights.slice(0, 4).map((highlight, idx) => (
               <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
@@ -199,11 +200,11 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
                 : 'bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-slate-950 shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.01]'
             }`}
           >
-            <span>{isReact ? 'React JS Platformuna Başla' : 'Spring Boot Platformuna Başla'}</span>
+            <span>{isReact ? t.cards.launchReact : t.cards.launchSpring}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
           </a>
 
-          {/* Secondary Controls: Curriculum Modal & GitHub Link */}
+          {/* Secondary Controls: Table of Contents Modal & GitHub Link */}
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={() => {
@@ -213,7 +214,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
               className="py-2.5 px-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all"
             >
               <BookOpen className="w-3.5 h-3.5 text-slate-400" />
-              <span>Müfredatı Gör</span>
+              <span>{t.cards.viewIndex}</span>
             </button>
 
             <a
@@ -226,7 +227,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ track, onOpenCurriculum 
               <svg className="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="currentColor">
                 <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
               </svg>
-              <span>GitHub Repo</span>
+              <span>{t.cards.repo}</span>
               <ExternalLink className="w-3 h-3 text-slate-500" />
             </a>
           </div>
