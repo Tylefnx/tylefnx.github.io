@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
                   href={courses.reactjs.primaryUrl}
                   className="hover:text-cyan-300 transition-colors flex items-center gap-1"
                 >
-                  <span>react.tayfunucuncu.dev</span>
+                  <span>reactjs.tayfunucuncu.dev</span>
                   <ExternalLink className="w-3 h-3 text-slate-600" />
                 </a>
               </li>

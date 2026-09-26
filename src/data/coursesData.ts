@@ -18,7 +18,7 @@ export const getCoursesData = (lang: Language): Record<'reactjs' | 'springboot',
         : 'An in-depth supplementary developer reference beyond standard docs. Features Virtual DOM and Fiber reconciler visualizers, interactive hook sandboxes, Next.js App Router and performance recipes.',
       icon: 'react',
       accentColor: 'cyan',
-      primaryUrl: 'https://react.tayfunucuncu.dev/',
+      primaryUrl: 'https://reactjs.tayfunucuncu.dev/',
       githubUrl: 'https://github.com/Tylefnx/learnreactjs',
       stats: {
         modules: 14,
@@ -286,7 +286,7 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
       category: isTr ? 'Mimari' : 'Architecture',
       track: 'reactjs',
       trackTitle: 'React JS Mastery Hub',
-      url: 'https://react.tayfunucuncu.dev/#architecture',
+      url: 'https://reactjs.tayfunucuncu.dev/#architecture',
       description: isTr
         ? 'Fiber düğümleri, render ve commit aşamaları, concurrent mod mantığı.'
         : 'Fiber nodes, render/commit phases, and concurrent mode mechanics.'
@@ -297,7 +297,7 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
       category: isTr ? 'Hooks & State' : 'Hooks & State',
       track: 'reactjs',
       trackTitle: 'React JS Mastery Hub',
-      url: 'https://react.tayfunucuncu.dev/#lessons',
+      url: 'https://reactjs.tayfunucuncu.dev/#lessons',
       description: isTr
         ? 'Tüm standart hookların derinlemesine incelenmesi ve kendi custom hookunuzu yazma.'
         : 'In-depth breakdown of standard hooks and custom hook architectures.'
@@ -308,7 +308,7 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
       category: 'Next.js',
       track: 'reactjs',
       trackTitle: 'React JS Mastery Hub',
-      url: 'https://react.tayfunucuncu.dev/#lessons',
+      url: 'https://reactjs.tayfunucuncu.dev/#lessons',
       description: isTr
         ? 'RSC, Server Actions, Dynamic Routes ve Streaming SSR.'
         : 'RSC, Server Actions, Dynamic Routes and Streaming SSR.'
@@ -319,7 +319,7 @@ export const getSearchTopics = (lang: Language): SearchTopic[] => {
       category: isTr ? 'Optimizasyon' : 'Optimization',
       track: 'reactjs',
       trackTitle: 'React JS Mastery Hub',
-      url: 'https://react.tayfunucuncu.dev/#recipes',
+      url: 'https://reactjs.tayfunucuncu.dev/#recipes',
       description: isTr
         ? 'useMemo, useCallback, memoization ve gereksiz re-renderları önleme.'
         : 'useMemo, useCallback, memoization and preventing redundant re-renders.'
@@ -403,7 +403,7 @@ export const getComparisonFeatures = (lang: Language) => {
         },
         {
           feature: 'Canlı Yayın Adresi',
-          react: 'react.tayfunucuncu.dev',
+          react: 'reactjs.tayfunucuncu.dev',
           spring: 'spring.tayfunucuncu.dev'
         }
       ]
@@ -435,7 +435,7 @@ export const getComparisonFeatures = (lang: Language) => {
         },
         {
           feature: 'Live Deployment URL',
-          react: 'react.tayfunucuncu.dev',
+          react: 'reactjs.tayfunucuncu.dev',
           spring: 'spring.tayfunucuncu.dev'
         }
       ];
