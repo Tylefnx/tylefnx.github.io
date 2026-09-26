@@ -40,3 +40,24 @@ export interface SearchTopic {
   url: string;
   description: string;
 }
+
+export interface LabTask {
+  id: string;
+  title: string;
+  track: 'reactjs' | 'springboot';
+  difficulty: 'Core' | 'Advanced' | 'Enterprise';
+  chaptersCovered: string;
+  scenario: string;
+  appGoal: string;
+  requirements: string[];
+  starterSnippet: {
+    fileName: string;
+    language: string;
+    code: string;
+  };
+  solutionBlueprint: {
+    explanation: string;
+    code: string;
+  };
+  docUrl: string;
+}

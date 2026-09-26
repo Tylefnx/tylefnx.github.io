@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Volume2, VolumeX, Terminal, ArrowUpRight } from 'lucide-react';
+import { Search, Volume2, VolumeX, Terminal, ArrowUpRight, Code2 } from 'lucide-react';
 import { soundFx } from '../utils/audio';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -70,15 +70,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             href="#tracks"
             onMouseEnter={() => soundFx.playHover()}
             onClick={() => soundFx.playClick()}
-            className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
+            className="px-3 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
           >
             {t.nav.docs}
+          </a>
+          <a
+            href="#labs"
+            onMouseEnter={() => soundFx.playHover()}
+            onClick={() => soundFx.playClick()}
+            className="px-3 py-1.5 rounded-full text-xs font-semibold text-cyan-300 hover:text-white hover:bg-cyan-950/60 transition-all flex items-center gap-1"
+          >
+            <Code2 className="w-3.5 h-3.5" />
+            {t.nav.labs}
           </a>
           <a
             href="#playground"
             onMouseEnter={() => soundFx.playHover()}
             onClick={() => soundFx.playClick()}
-            className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
+            className="px-3 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
           >
             {t.nav.simulator}
           </a>

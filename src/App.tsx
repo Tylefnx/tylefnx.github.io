@@ -4,6 +4,7 @@ import { BackgroundCanvas } from './components/BackgroundCanvas';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrackShowcase } from './components/TrackShowcase';
+import { LabTasksSection } from './components/LabTasksSection';
 import { InteractivePlaygroundTeaser } from './components/InteractivePlaygroundTeaser';
 import { ComparisonMatrix } from './components/ComparisonMatrix';
 import { Footer } from './components/Footer';
@@ -30,6 +31,7 @@ function MainLayout() {
         <main className="flex-grow">
           <Hero />
           <TrackShowcase onOpenCurriculum={(track) => setSelectedCurriculum(track)} />
+          <LabTasksSection />
           <InteractivePlaygroundTeaser />
           <ComparisonMatrix />
         </main>
